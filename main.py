@@ -69,11 +69,10 @@ def divide(the_table):
       liste.append([the_table[col][row], the_table[col+1][row], the_table[col+2][row]])
       row += 1
     col += 1
-  print(liste)
 
 
 
-  return row, column
+  return row, column, liste
 
 # def search(divided, num):
   # for x in divided[0]:
@@ -103,4 +102,4 @@ best_nums = get_number(table)
 bolunmus = divide(table)
 
 
-# search(bolunmus, best_nums[0])
+print(divide(table)[2])
