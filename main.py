@@ -56,17 +56,33 @@ def divide(the_table):
       x += 1
     buyuk += 1
 
+  
+  # divide box
+  #             row|col 
+  # print(the_table[0][1], the_table[1][1], the_table[2][1])
+
+  liste = []
+  col = 0
+  while col+2 < len(the_table):
+    row = 0
+    while row < len(the_table[0]):
+      liste.append([the_table[col][row], the_table[col+1][row], the_table[col+2][row]])
+      row += 1
+    col += 1
+  print(liste)
+
+
 
   return row, column
 
-def search(divided, num):
-  for x in divided[0]:
-    if num not in x:
-      print(x)
-  print("xxxxxxxxxxxxxxxx")
-  for y in divided[1]:
-    if num not in y:
-      print(y)
+# def search(divided, num):
+  # for x in divided[0]:
+  #   if num not in x:
+  #     print(x)
+  # print("xxxxxxxxxxxxxxxx")
+  # for y in divided[1]:
+  #   if num not in y:
+  #     print(y)
 
 table = [
   [[0, 0, 0], [9, 0, 0], [1, 0, 0]],
@@ -87,4 +103,4 @@ best_nums = get_number(table)
 bolunmus = divide(table)
 
 
-search(bolunmus, best_nums[0])
+# search(bolunmus, best_nums[0])
