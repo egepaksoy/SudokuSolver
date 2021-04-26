@@ -28,6 +28,14 @@ def get_number(the_table):
 
   return find_number
 
+def search_in_table(the_table, num):
+  row = []
+  for table_row in the_table:
+    for mini_row in table_row:
+      for num in mini_row:
+        row.append(num)
+
+  return row
 
 table = [
   [[0, 0, 0], [9, 0, 0], [1, 0, 0]],
@@ -46,5 +54,4 @@ table = [
 
 best_nums = get_number(table)
 
-for num in best_nums:
-  # Search in the table for true position
+print(search_in_table(table, best_nums[0]))
