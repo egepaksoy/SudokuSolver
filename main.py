@@ -28,14 +28,33 @@ def get_number(the_table):
 
   return find_number
 
-def search_in_table(the_table, num):
+def divide(the_table):
   row = []
-  for table_row in the_table:
-    for mini_row in table_row:
-      for num in mini_row:
-        row.append(num)
+  column = []
 
-  return row
+  x = 0
+  while x < len(the_table):
+    row.append([])
+    for row_block in the_table[x]:
+      for number in row_block:
+        row[x].append(number)
+    x += 1
+
+  buyuk = 0
+  x = 0
+  while buyuk < 3:
+    kucuk = 0
+    while kucuk < 3:
+      column.append([])
+      for row in the_table:
+        column[x].append(row[buyuk][kucuk])
+      kucuk += 1
+      x += 1
+    buyuk += 1
+
+
+  return row, column
+
 
 table = [
   [[0, 0, 0], [9, 0, 0], [1, 0, 0]],
@@ -53,5 +72,4 @@ table = [
 
 
 best_nums = get_number(table)
-
-print(search_in_table(table, best_nums[0]))
+divided = divide(table)
