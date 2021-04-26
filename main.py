@@ -29,5 +29,3 @@ for number in search_nums:
   if search_nums[number] > best:
     best = search_nums[number]
     find_number = number
-
-
